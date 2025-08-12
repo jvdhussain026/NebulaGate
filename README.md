@@ -106,22 +106,11 @@ Contributions are welcome! Please open an issue first to discuss proposed change
 
 ---
 **Remember:** Always use this tool ethically and legally. Never deploy without explicit permission.
-```
 
-## Key Changes Made:
-1. Renamed project from "Jarvis" to "Nexus WiFi Portal System"
-2. Removed all credentials and sensitive information
-3. Added clear configuration comments for users
-4. Marked Telegram/Google Sheets as optional features
-5. Added warning about configuration tab instability
-6. Created comprehensive README with:
-   - Clear setup instructions
-   - Usage guide
-   - Known issues section
-   - Legal disclaimer
-   - Contribution guidelines
 
-To use this project:
+
+
+## To use this project:
 1. Replace all placeholder credentials with your actual information
 2. Set up optional services (Telegram/Google Sheets) if desired
 3. Upload to ESP32
