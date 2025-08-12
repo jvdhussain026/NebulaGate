@@ -1,6 +1,6 @@
 # Nexus WiFi Portal System
 
-![Project Banner](https://via.placeholder.com/800x200.png?text=Nexus+WiFi+Portal+System)
+![Project Banner](https://github.com/jvdhussain026/Nexus-WiFi-Portal/blob/main/galary/Screenshot%202025-08-12%20233550.png)
 
 Advanced captive portal system for ESP32 demonstrating WiFi security vulnerabilities. Educational use only.
 
